@@ -4,8 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI Calculator</title>
+
+    <style>
+
+        body{
+
+            background-color: #FA8BFF;
+            background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+            height: 100vh;
+            
+        }
+
+        .bmi-body{
+
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 250px auto;
+            padding: 50px;
+            width: 300px;
+            border-radius: 10px;
+
+        }
+
+
+        .ib{
+
+            margin: 5px;
+            padding: 5px;
+            border-radius: 3px;
+            width: 200px;
+            font-size: 20px;
+
+
+        }
+
+        .btn{
+
+            background-color: #FA8BFF;
+            background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
+            border-radius: 50px;
+            border: none;
+            padding: 5px 20px;
+            margin: 8px;
+            cursor: pointer;
+           
+        }
+
+        .font{
+            font-size: 20px;
+           
+        }
+
+        
+
+    </style>
 </head>
 <body>
+
+    <div class="bmi-body">
+        <h1>BMI Calculator</h1>
+        <span class="font">weight: <input type="text" class="ib " id="weight"></span>
+        <span class="font">Height: <input type="text" class="ib" id="height"></span>
+        <span class="font" id="answer">Your BMI is : </span>
+        <button type="button" class="btn font" onclick="CalculateBMI">Calculate</button>
+    </div>
+
+
+    <script>
+
+        function CalculateBMI()
+        {
+
+            const ht = document.getElementById("height").value;
+
+            const wt = document.getElementById("weight").value;
+
+            const bmi = wt/(ht/100*ht/100)
+            const bmio = (bmi.toFixed(2));
+            
+            document.getElementById("answer").innerHTML = "Your BMI is :" +bmio;
+
+
+
+        }
+
+    </script>
     
 </body>
 </html>
