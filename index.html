@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI Calculator</title>
 
     <style>
-
-        body{
+        body {
 
             background-color: #FA8BFF;
             background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
             min-height: 100vh;
-  
+
         }
 
-        .bmi-body{
+        .bmi-body {
 
             background-color: white;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin: 0 auto;
+            margin: 100px auto;
             padding: 30px;
             width: 400px;
             border-radius: 10px;
@@ -29,11 +29,11 @@
         }
 
 
-        .ib{
+        .ib {
 
             width: 70%;
             display: inline;
-            margin: 5px ;
+            margin: 5px;
             padding: 5px;
             border-radius: 3px;
             font-size: 20px;
@@ -41,7 +41,7 @@
 
         }
 
-        .btn{
+        .btn {
 
             background-color: #FA8BFF;
             background-image: linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%);
@@ -51,60 +51,58 @@
             margin: 10px auto;
             cursor: pointer;
             display: block;
-           
+
         }
 
-        .font{
+        .font {
             font-size: 20px;
-           
+
         }
 
-        @media screen and (max-width = 300px) {
+        @media screen and (max-width=300px) {
 
-            .bmi-body{
+            .bmi-body {
 
-                width: 70%;   
-               
+                width: 70%;
+
             }
-            
+
         }
-
-        
-
     </style>
 </head>
+
 <body>
 
     <div class="bmi-body">
-        <h1 >BMI Calculator</h1>
-        <span class="font">weight: <input type="text" class="ib " id="weight"/></span>
-        <span class="font">Height: <input type="text" class="ib" id="height"/></span>
+        <h1>BMI Calculator</h1>
+        <span class="font">weight: <input type="text" class="ib " id="weight" placeholder="Insert in KG"/></span>
+        <span class="font">Height: <input type="text" class="ib" id="height" placeholder="Insert in MM"/></span>
         <span class="font" id="answer">Your BMI is : </span>
         <button type="button" class="btn font" onclick="CalculateBMI()">Calculate</button>
     </div>
 
-   
+
 
 
     <script>
 
-     
 
-        function CalculateBMI()
-        {
+
+        function CalculateBMI() {
 
             const ht = document.getElementById("height");
 
             const wt = document.getElementById("weight");
 
-           const ans = parseFloat(wt.value)/(parseFloat(ht.value)*parseFloat(ht.value));
-            
-           const ansElement = document.getElementById("answer");
+            const ans = parseFloat(wt.value) / (parseFloat(ht.value) * parseFloat(ht.value));
 
-           ansElement.innerText =  `Your BMI is : ${ans}`;
+            const ansElement = document.getElementById("answer");
+
+            ansElement.innerText = `Your BMI is : ${ans}`;
         }
 
     </script>
-    
+
 </body>
+
 </html>
