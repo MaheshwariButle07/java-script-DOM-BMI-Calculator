@@ -48,14 +48,22 @@
             border-radius: 50px;
             border: none;
             padding: 5px 20px;
-            margin: 10px auto;
+            margin: 10px ;
             cursor: pointer;
-            display: block;
+            
+           
 
         }
 
         .font {
             font-size: 20px;
+
+        }
+
+        .btn-css{
+
+            display: flex;             
+           
 
         }
 
@@ -75,10 +83,14 @@
 
     <div class="bmi-body">
         <h1>BMI Calculator</h1>
-        <span class="font">weight: <input type="text" class="ib " id="weight" placeholder="Insert in KG"/></span>
-        <span class="font">Height: <input type="text" class="ib" id="height" placeholder="Insert in Metre"/></span>
+        <span class="font">weight: <input type="text" class="ib " id="weight" placeholder="Insert in KG" /></span>
+        <span class="font">Height: <input type="text" class="ib" id="height" placeholder="Insert in Metre" /></span>
         <span class="font" id="answer">Your BMI is : </span>
-        <button type="button" class="btn font" onclick="CalculateBMI()">Calculate</button>
+
+        <div class="btn-css">
+            <button type="button" class="btn font" onclick="CalculateBMI()">Calculate</button>
+            <button type="button" class="btn font" onclick="reset()">Reset</button>
+        </div>
     </div>
 
 
@@ -99,6 +111,23 @@
             const ansElement = document.getElementById("answer");
 
             ansElement.innerText = `Your BMI is : ${ans}`;
+        }
+
+        function reset() {
+
+            const ht = document.getElementById("height");
+
+            const wt = document.getElementById("weight");
+
+            const ansElement = document.getElementById("answer");
+
+            ht.value = "";
+            wt.value = "";
+
+            ansElement.innerText = "Your BMI is :";
+
+
+
         }
 
     </script>
